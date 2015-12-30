@@ -6,13 +6,29 @@ body{margin:0px;}
 	background:red;
 }
 .box2{
-	position:fixed;
-	bottom:10px;
-	left:20px;
 	background:yellow;
 }.box3{
 	background:blue;
 }
+
+.box1:active{
+	background:#000;
+}
+
+.box1:link{
+	background:red;
+}
+.box1:visited{
+	background:yellow;
+}
+.box1:active{
+	background:blue;
+}
+.box1:hover{
+	background:green;
+}
+
+
 
 /* 
 content-box，border和padding不计算入width之内
