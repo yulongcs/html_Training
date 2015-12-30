@@ -1,0 +1,719 @@
+﻿一、HTMl基础知识
+   1、Html和CSS的关系
+     学习web前端开发基础技术需要掌握：HTML、CSS、JavaScript
+     1）HTML是网页内容的载体。（内容就是网页制作者放在页面上想让用户浏览的信息，可以包括文字、图片、
+       视频等）
+     2）CSS样式是表现。（就像是网页的外衣。比如，字体、颜色、背景、位置，）
+     3）Javascript是用来实现网页上的特殊效果。 （如：鼠标滑过弹出下拉菜单，点击按钮出发按钮提交事件
+       ，网页上图片的轮换。有动画的，有交互的一般都是用javascript来实现的）   
+   2、认识Html标签
+      1）标签的语法
+        标签使用英文尖括号<和>括起来，如<div>就是一个标签。
+        html中的标签一般都是成对出现的，分开始标签<标签名>，结束标签</标签名>，结束标签比开始标签
+        多一个/。 如：<p></p> <div></div> <span></span>
+        标签与标签之间是可以嵌套的，但先后顺序必须保持一致。
+        html标签是不区分大小写的，<h1>和<H1>是一样的，但建议小写，大部分程序员都是以小谢为准。
+      2）常用标签介绍
+       <p> 段落
+       <hx> 标题
+       <em> 强调， 斜体显示
+       <strong> 强调的基本跟高，加粗显示
+       <a> 链接 <a href="网址">链接名称</a>
+       <img> 图片 <img src="图片地址" alt="破图说明" title="提示文字">
+       <ul> <li></li> </ul> 无顺序清单
+       <ol> <li></li> </ol> 有顺序清单
+       <table> <tr> <td></td> </tr> </table> 表格，一般展示类似Excel数据列表，不要使用table来排版
+       <div> 块状元素， 类似一个盒子，可以把一些独立的逻辑部分划分出来，放在一个<div>标签中，这个<div>标签的作用
+             相当于一个容器
+       <span> 行内元素, 类似一个袋子，
+       <q> 短文本引用, 行内元素， 用于引用一些名人名言，诗句。 如<q>庄周小梦迷蝴蝶，王帝春心托杜鹃</q> 显示"庄周小梦迷蝴蝶，王帝春心托杜鹃"    
+       <blockquote> 长文本引用，块状元素， 解析是前后缩进3个字符， 在文章中引入大段知名作家的文字时用此标签。
+       <br> 换行符， 在xhtml1.0 中的写法是<br />在胡桃木html4.01版本后就可以写成<br> 类似的还有<hr>,<img>
+       <address> 地址信息，默认样式是斜体，如果不喜欢可以在css里面重写<address>标签的默认样式。
+       <code> 插入一行代码, 插代码使用<pre>
+       <form> 表单标签，用于用户交互，可以把浏览者输入的数据专递到服务器端， <form method="传递方式" action="服务器文件">...</form>
+              action:数据提交的地方，如一个aspx页面（save.aspx）
+              method:数据传输的方式(get/post),
+                     Get是用来从服务器上获取数据，post是用来向服务器提交数据;
+                     Get是数据是放在URL上的，传输数据量小,Post是将数据放在form的数据体中的，按照变量和值对应的方式，专递到action所指向的URL;
+                     Get是通过request.QueryString["控件Name"]来取得变量的值，Post是通过request.Form["控件Name"]来访问提交的内容
+          <input type="submit" /> 提交数据
+          <input type="reset" /> 初始化form表单
+          <label> 当用户点击该label标签时，浏览器就会自动将焦点转移到和标签相关的表单控件上，  <label for="控件ID"> label名称 </label>        
+
+ 
+
+   3、认识HTML文件基本结构
+     1）<html></html>称为根标签，所有的网页标签都在<html></html>中。
+     2）<head> 标签用于定义文档的头部，它是所有头部元素的容器。头部元素有<titlt>,<script>,<style>,<link>,
+       <meta>等标签。
+     3）在<body>和</body>标签之间的内容是网页的主要内容，如<h1>、<p>、<a>、<img>等网页内容标签，在
+       这里的标签中内容会在浏览器中会显示主来。
+   4、了解HTML的代码注释
+      语法：<!--注释文字-->
+      如果是对模块进行注释通常是这样书写的， <!--模块名称 begin--> HTML 模块内容 <!--模块名称 end-->
+   5、HTML语义化
+      1)什么是语义化？
+        清楚每个标签的用途，在什么情况下我们可以使用这些标签。比如：网页中的文章的标题通常用<h1>
+        标签，栏目名称通常用<h2>表示，文章中的段落放在<p>标签中，在文章中想强调的文本，可以使用
+        <em>表示
+      2）语义化的好处
+        容易被搜索引擎收录
+        文件结构清晰，便于维护
+        看起来比较专业
+
+css基础知识
+  1、主要用于定义html内容在浏览器内的显示样式，使用css样式的一个好处是通过定义某个样式，可以让不同网页位置的文字有着统一
+     的字体、字号或者颜色等样式。
+  2、语法：css样式由选择符和声明组成，而声明又由属性和值组成。
+     选择符：又称选择器，指明网页中要应用样式规则的元素
+     声明：在英文大括号"{}"中的就是声明，属性和值之间用英文冒号":"分割。当有多条声明时，中间用英文分号";"分割。
+     如：p{font-size:12px; color:red;}
+      1)最后一条声明可以没有分号，但是为了以后修改方便，一般也加上分号。
+      2）为了使用样式更加容易阅读，可以将每条代码写在一个新行内。 
+        .div {
+               position: relative; width: 200px; height: 20px; line-height: 20px; float: left; padding:10px; margin:10px;
+               color: red; background: blue; font-size: 12px;
+         }
+   3、css注释代码
+     /*注释语句*/
+   4、css基础知识
+     1）内联式：直接写在现有的HTML标签中 
+       <p style="color:red;font-size:12px;"></p>
+     2)嵌入式：写在当前的文件中
+       把css样式代码写在<style type="text/css"></style>标签之间。一般情况下嵌入式css样式写在<head></head>之间
+       <style type="text/css">
+          span{
+             corlor:red;
+           }
+       </style>
+      3）外部式：写在单独的一个文件中
+        把css代码写在一个单独的外部文件中，这个css样式文件以".css"为扩展名，在<head>内使用<link>标签将css样式
+        文件链接到HTML文件内
+      4）三种方式的优先级， 内联式 > 嵌入式\外部式。 嵌入式与外部式的优先级与他们的位置有关，位置后的比位置钱的高（即后面的样式会覆盖前面的样式）
+        总结来说：就近原则（离被设置元素越近优先级越高）
+    5、选择器：指明{}中的"样式"的作用对象，通俗的说法就是给谁加样式。
+       1）标签选择器：就是html中的标签
+         p{font-size:12px;line-height:1.6em}
+       2)类选择器：在css样式编码中是最常用到的，
+         .类名{css样式代码}
+         <span class="text"></span>
+         .text{color:red}
+       3）ID选择器
+         #ID名称{css样式代码}
+          <span id="message"></span>
+          #message{color:red}   
+        4)类和ID选择器的区别
+          相同点：可以应用于任何元素
+          不同点：a.ID选择器只能在HTMl文档中使用一次。class选择器可以出现多次
+                 b.可以使用类选择器词列表方法为一个元素同时设置多个样式，ID选择器不能使用词列表
+        5）子选择器：选择指定标签的子元素
+           .food>li{border:1px solid red;} /*使class为food下的子元素li加入红色实现边框*/
+        6）包含（后代）选择器：加入空格，用于选择指定标签元素下后辈元素
+            .food span{color:red} /*使class为food下的所有span的文字颜色显示为红色*/
+        7）自选择器和包含（后代）选择器的区别： >作用于元素的第一层后代，空格作用于元素所有后代
+        8）通用选择器：它使用（*）号指定，它的作用是匹配html中任意标签元素
+             *{color:red} /*html中任意标签元素字体颜色全部设置为红色*/
+        9）伪类选择符，为什么叫伪类选择符？它允许给html不存在的标签设置样式，比如我们给html中一个标签元素的鼠标
+          滑过的状态来设置字体颜色
+              a：hover{color:red}
+       10）分组选择器，使用分组选择器（，），可以为html多个元素设置同一个样式
+          .colorRed,span{color:red}
+       11)继承：css的某些样式是具有继承性的，允许样式不仅应用于某个特定html标签元素，而且应用于其后代。
+          p{color:red}
+          <p>Hello,<span>admin</span></p> 子元素span继承了p的样式，字体变成红色。
+          但有一些css样式是不具有继承性关系的，
+          p{border:1px solid red}
+          <p>Hello,<span>admin</span></p> 对于子元素span是没有起到作用。
+       12）特殊性
+          有的时候我们为同一个元素设置了不同的css样式代码，那么元素会启用哪一个css样式呢？
+           浏览器是根据权值来判断使用那种css样式，权值高的就使用那种css样式。
+           权值的规则：
+           标签的权值：1
+           类选择符的权值：10
+           ID选择符的权值最高：100
+           span{color:red} /*权值1*/
+           p span{color:greed}/*权值为1+1=2*/
+           .colorYellow{color:Yellow} /*权值为10*/
+           p span.colorBlue{color:blur}/*权值为1+1+10=12*/
+           #footer .note p{color:#000} /*权值为100+10+1=111*/
+       13）层叠
+          html文件中对于同一个元素可以有多个css样式存在，当相同的权重样式存在是，会根据这些样式的先后顺序来决定，
+          处于后面的css样式会被应用（也就是后面的把前面给覆盖掉了）。
+       14）重要性
+          在做网页代码是，有些特殊的情况需要为摩羯样式设置最高权限，这个时候我们会使用!important来解决。
+          span{color:yellow !important}
+          #text{color:blue}          
+          .noteText{color:#000}  
+          <span id="text" class="noteText" style="color:red">Hello world!!!</span> 
+      
+     6、元素
+       css中，html元素的标签元素大体被分为三种不同类型：块状元素、内联元素和块状内联元素。
+       常用的块状元素：
+          <div>、<p>、<h1>...<h6>、<ol>、<ul>、<dl>、<table>、<address>、<blockquote>、<form>
+       常用的内联元素：
+          <a>、<span>、<br>、<i>、<em>、<strong>、<label>、<q>、<cite>、<code>
+       常用的内联块状元素：
+          <img>、<input>
+      1、块状元素
+         使用css样式dicplay:block,可以将行内元素转换为块状元素，a{display:block},使标签具有块状元素特点
+          块状元素特点：
+           1）每个块级元素都从新的一行开始，并且其后的元素也另起一行（一个块状元素独占一行）
+           2）元素的高度、宽度、行高以及顶和底边距都是可以设置的
+           3）元素宽度在不设置的情况下，是它本身父容器的100%（和父元素的宽度一致）
+       2、行内元素
+         块状元素也可以通过css样式dispaly:inline将元素设置为行内元素，使标签具有行内元素特点。
+         行内元素特点：
+           1）和其他元素在同一行（不包括块状元素）
+           2）元素的高度、宽度、行高以及顶部和底部边距不可设置（设置了也没效果）
+           3）元素的宽度，高度就是它所包含的文字或图片的宽度、高度，不可改变
+           4）行内元素不能包含块状元素
+        3、内联块状元素
+          就是同时具备内联元素、块状元素的特点，css样式代码：display:inline-block,就是将元素设置为内联块状
+          元素
+          内联块状元素特点
+           1）和其他元素在同一行（也不包括块状元素）
+           2）元素的高度、宽度、行高以及顶和底边距都可甚至。
+
+        4、盒子模型——边框
+           盒子模型的边框就是围绕着内容及补白的线，这条线你可以设置它的粗细、样式和颜色
+           如：div {border:2px solid red} /*设置边框粗细为2px、样式为实心、颜色为红的的边框*/
+           上面的border代码的缩写形式，可以分开写：
+           div{border-width:2px;border-style:solid;border-color:red}
+           注意：
+               1）border-style(边框样式)常见样式有：dashed(虚线)、dotted(点线)、solid（实线）
+               2）border-color(边框颜色)中的颜色可设置为十六进制的颜色，如border-color:#000
+               3）border-width(边框宽度)中的宽度也可以设置为：thin(细)|medium（中等）|thick（粗）(但不是很常用)，最常用的还是用像素（px）
+           css样式中允许为不同方向的边框设置边框：
+              border:设置所有边框
+              border-top:设置上面边框
+              border-right:设置右边边框
+              border-bottom:设置底部边框
+              border-left:设置左边边框
+         5、盒子模型——宽度和高度
+           盒子模型宽度和高度和我们平常所说的物体的宽度和高度理解是不一样的，css内定义的宽（width）和高（height）,指的是填充以外内容范围，
+           因此一个元素实际宽度（盒子的宽度）=左边界+左边框+左填充+内容宽度+右填充+有边框+有边界。
+           高度同理。
+         6、盒子模型——边界(margin)
+           元素与其他元素之间的距离可以使用边界（margin）来设置。边界也是可以分为上、右、下、左。
+           div(margin:20px 10px 15px 30px; )
+           也可以分开写：div{margin-top:20px; margin-right:10px; margin-bottom:15px; margin-left:30px;}
+           如果上下左右的边界都是10px可以这么写：div{margin:10px;}
+           如果上下边界为10px,左右为20px，可以这样写：div{margin:10px 20px;}
+           如果上边界10px,下边界20px,左右边界15px,可以这样写：div{margin:10px 15px 20px;}  
+         7、盒子模型——填充（padding）
+           元素内容与边框之间是可以设置距离的。
+           div{padding:20px 10px 15px 30px; }
+           可以分开写{padding-top:20px; padding-right:10px; padding-bottom:15px; padding-left:30px;}
+           缩写同margin.
+      
+      7、css布局
+        布局是建立在盒子模型基础之上，
+        网页中，元素的三种布局模型
+        1）流动模型（flow）
+        2)浮动模型（float）
+        3)层模型（layer）
+        1、流动模型（flow）
+          流动模型（flow）是默认的网页布局模式。
+          特征：
+            1）块状元素都会在所处的包含元素内自上而下按顺序垂直延伸分布，因为在默认状态下，块状元素的宽度都是100%。
+            2）在流动模式下，内联元素都会在所处的包含元素内从左到右水平分布显示。
+        2、浮动模型(float)
+          块状元素这么霸道都是独占一行，如果现在我们想让两个元素并排显示，怎么办？
+          设置元素浮动就可以实现这一愿望。任何元素在默认情况下是不能浮动的，但可以用css定义浮动，如div、p、table、img等元素都可以被定义为浮动。
+        3、层模型（layer）
+          层布局模型就像是PhotoShop中图层编辑功能一样，每个图层能够精确定位操作，但在网页设计领域，由于网页大小的活动性，层布局没能受到热捧。
+          但是网页上局部使用层布局还是有其方便之处的。
+          层模型的三种形式：
+          1)绝对定位（position:absolute）
+          2)相对定位（position:relative）
+          3)固定定位（position:fixed）
+          1、绝对定位
+           如果想为元素设置层模型中的绝对定位，需要设置position:absolute,作用是将元素从文档流中拖出来，然后使用left、right、top、bottom属性相对于
+           其最接近的一个具有定位属性的父包含块进行绝对定位。如不不存在这样的包含块，则相对于body元素，即相对于浏览器窗口。
+           div{width:200px; height:200px; border:2px red solid; position:absolute; left:100px; top:50px;}/*实现div相对于浏览器窗口向右移动100px,向下移动50px*/
+          2、相对定位
+           如果想为元素设置测模式中的相对定位，需要设置posotion:relative，它通过left，right,top,botton属性确定元素在正常文档流中的偏移位置。相对定位完成的过程是
+           首先按static(float)方式生成一个元素，相对于以前的位置，移动方向和幅度由left、right、top、bottom属性确定，偏移前的位置保留不动。
+          3、固定定位
+           fixed:表示固定定位，于absolute定位类型类似，但她的相对移动的坐标是视图（屏幕内的网页窗口）本身。由于视图本身是固定的，它不会随浏览器窗口的滚动条滚动而变化，
+           不受文档流影响
+           #div1{width:200px;height:200px;border:2px solid red; position:fixed; left:100px; top:50px; }
+       
+      8、css样式缩写
+         1）盒子模型代码缩写
+           以margin为例，
+           1、如果top、right、bottom、left的值相同
+             margin:10px 10px 10px 10px; -> margin:10px;
+           2、如果top和bottom值相同，left和right的值相同
+             margin:10px 20px 10px 20px; -> margin:10px 20px;
+           3、如果left和right的值相同
+             margin：10px 20px 30px 20px; -> margin:10px 20px 30px;
+         2)颜色值缩写
+           当设置的颜色是16进制的色彩值时，如果没两位值相同，可以缩写一般
+           1、color:#000000 -> color:#000;
+           2、color:#336699 -> color:#369;
+         3)字体缩写
+           body{font-style:normal; font-variant：normal; font-weight:border; font-size:1em; line-height:140%; font-family:"宋体"，sans-serif}
+           ->body{font:italic small-caps borld 1em/140% "宋体"，sans-serif;}
+          注意：使用这一简写至少要指定font-size和font-family,其他的属性如果没有指定将会自动使用默认值。                             
+           
+Jquery基础课程
+     1、Jquery基础选择器
+        1）#id选择器（使用身份证来找人）
+         格式：$("#my_id")
+         其中#my_id表示根据id选择器获取页面中指定的标签元素，且返回唯一的元素
+         $("#div1").html("html world...");
+
+        2）element选择器（寻找铅笔）
+         在文具盒中，有铅笔，钢笔，和水彩笔，类似网页中的<div>、<span>各个元素，虽然同属于一个容器，但有各自的功能，jQuery中可以根据元素查找元素，
+         格式：$("element")
+         element就是元素的名称，也就是工具盒中的笔的名称，找到水彩笔，我们就可以画画了，通过元素名找到元素就可以对他进行操作了。
+         $("div").css("color","#000");
+
+        3).class选择器（寻找红色的铅笔）
+          通过元素的类别属性查找元素，就好比在文具盒中要找一个红色铅笔一样，
+          格式：$(".class")
+          其中.class参数表示元素的css类名。
+          $(".top").css("color","#000");
+ 
+        4)*选择器（取走所有铅笔）
+          有一个非常"牛"的选择器，"*"号选择器，它可以获取页面中的全部元素，包括<head>、<body>、<script>,相当于可以取走文具盒中的所有铅笔
+          格式：$("*")
+          实践证明：由于使用"*"选择器获取的是全部元素，因此，有些浏览器将会比较缓慢，这个选择器要谨慎使用。
+       
+        5）sele1,sele2,seleN选择器
+          有时需要精确的选择任意多个指定的元素，类似从文具盒中挑选出多根自己喜欢的笔，就需要调用sele1,sele2,seleN
+          格式：$("sele1,sele2,seleN")
+          参数sele1、sele2到seleN为有效的选择器，每个选择器之间用","号隔开，它们就是之前学习的各种选择器
+          $("#divID,.divClass,p");
+ 
+        6)层次选择器
+          在实际应用开发中，常常是多个元素嵌套在一起，形成复杂的层次关系，通过层次选择器，可以快速定位某一次的的一个或多个元素
+          格式：$("父元素 后辈元素")
+          父元素和子元素是使用空格隔开的两个元素，父元素任何有效的选择器，子元素是寻找元素的选择器，类似寻找一个家族下的全部子孙后代，
+          $("div span");
+        
+        7)parent > child 选择器
+          parent > child 选择器的范围比层次选择器的范围要小写，它所选择的目标是子集元素，相当于一个家庭中的子辈们，但不包括孙子辈的。
+          格式：$("parent > child");
+          child参数获取的元素都是parent元素的子元素，它们之间通过 ">" 符号来表示一种层级关系。
+          $("div>span");
+  
+        8)prev + next选择器
+          俗话说"远亲不如紧邻"，通过相邻选择器可以查找prev元素紧邻的下一个"next"元素。
+          格式：$("prev + next");
+          通过"+"符号形成一种层级相邻的关系，表明next选择器获取的元素是prev元素之后的第一个同辈元素。
+          $("p+span");
+  
+        9)prev ~ siblings选择器
+          prev ~ siblings选择器也是查找prev元素后面的全部相邻元素，         
+          通过"~"符号形成一种层级相邻的关系，表明siblings选择器获取的元素都是prev元素之后的同辈元素。
+
+     2、过滤器选择器
+        过滤器选择器是根据某过滤器进行元素的匹配，书写时以":"号开头，通常用于查找集合元素中的某一位置的单个元素。，
+       1）：first
+         得到一组相同元素标签中的第一个元素。
+         格式：$("li:first");
+   
+       2):eq(index)
+         从一组标签元素数组中，灵活选择任意的一个标签元素
+         index表示索引值，重0开始，类似数组下标。
+         格式：$("li:eq(3)");
+    
+       3）：contains(text)
+         按照文本内容查找一个或多个元素
+         格式：$("li:contains('sss')");
+
+       4):has(selector)
+         获取选择器中包含指定元素名称的全部元素，其中selector参数就是包含的元素。
+         格式:$("li:has('p')");
+
+       5)：hidden
+         获取全部不可见的元素
+          格式：$("p:hidden");
+
+       6):visible
+         获取全部可见的元素
+           格式：$("p:visible");
+ 
+       7)[attribute=value]属性选择器
+         属性作为DOM元素的一个重要特征，也可以用于选择器中，[attribute=value]属性选择器的功能是获取与属性名和属性值完全相同的元素，
+         其中[]是专门用于属性选择器的括号符，参数attribute表示属性名称，value参数表示属性值。
+         $("li[title='sss']");
+         [attribute*=value]:获取属性值中包含指定内容的全部元素
+       
+       8）：first-child子元素过滤选择器
+         获取每个父元素中返回首个元素。它是一个集合，常用多个集合数据的选择处理。
+         $("li:first-child");
+
+       9):last-child子元素过滤器
+         与：first-child子元素过滤器功能相反，它是获取每个父元素中最后一个子元素
+         $("li:last-child");
+
+     3、表单选择器
+       1）：input表单选择器
+         可以获取表单全部内容，不仅包括所有的<input>标记的表达你元素，还包括<textarea>、<select>和<button>标记的表单元素
+         格式：$("#frmTest :input");
+ 
+       2):text表单文本选择器
+         获取表单中全部单行的文本输入元素，单行的文本输入框就像一个不换行的字条工具
+         格式：$("#frmTest :text");
+
+       3):password表单密码选择器
+         获取密码输入文本框
+         格式：$("#frmTest :password");
+
+       4):radio单选按钮选择器
+         表单中的单选按钮常用于多项数据中仅选择其一，而是用：radio选择器可以轻松获取表单中的全部单选按钮元素。
+         格式：$("#frmTest :radio");
+
+       5):checkbox复选框选择器
+         快速定位并获取表单中的复选框元素。
+         格式：$("#frmTest :checkbox");
+
+       6):submit提交按钮选择器
+         通常情况下，一个表单中只允许一个"type"属性值为"submit"的提交按钮，使用：submit选择器可获取表单中的扎个提交按钮。
+         格式：$("#frmTest :submit");
+
+       7):image图像域选择器
+         当一个<input>元素的"type"属性值设为"image"时，该元素就是一个图像域。
+         格式：$("#frmTest :image");
+
+ 
+       8）：buttton表单按钮选择器
+          表单中包含许多类型的按钮，使用：button选择器能获取"type"属性值为"button"的<input>和<button>这两类普通按钮元素。
+           格式：$("#frmTest :buttton");
+   
+       9）：checked选中状态选择器
+         有一些元素存在选中状态，如复选框、单选按钮元素，选中是"checked"属性值为"checked",调用：checked可以获取处于选中状态的全部元素。
+          格式：$("#frmTest :checked");
+   
+       10）：selected选中状态选择器
+          ：selected选择器只能获取<select>下拉框列表中全部处于选中状态的<option>选项元素。
+          格式：$("#frmTest :selected");
+ 
+     4、操作DOM元素
+        1)使用attr()方法控制元素的属性
+          attr()方法的作用是设置或者返回元素的属性，
+          attr(属性名)->获取元素的属性名的值；
+          attr(属性名，属性值)->设置元素属性名的值。
+          attr({属性名：属性值，属性名：属性值，...})->给元素多个属性设置值
+
+        2）操作元素的内容
+          使用html()和text()方法操作元素的内容
+          html()->获取元素的HTML内容
+          html(HTML内容)->设置元素的HTML内容
+          text()->获取元素中的文本内容，不包含HTML格式代码
+          text(文本内容)->设置元素的文本内容
+
+        3）操作元素的样式
+          通过addClass()和css()方法可以方便地操作元素中的样式。
+          addClass(样式名称)， $（#content）.addClass("blue")     .blue{color:blue}
+          css(样式的属性内容), $(#content).css({ "color": "yellow" });
+
+        4)移除属性和样式
+          removeAttr(name) ->移除元素的属性
+          removeClass(class) ->移除元素的样式
+
+        5）使用append()方法向元素内追加内容
+          append(content)方法的功能是向指定的元素中追加内容，被追加的content参数，可以是字符、HTML元素标签，还可以是一个返回字符串内容的函数
+          append("Hello World...");
+          append("<p style='color:red;'>Hello World...</p>");
+          append(getText()); function getText(){ return "Hello World..." }
+
+        6)使用appendTo()方法向被元素内插入内容
+          appendTo()方法也可以向指定的元素内插入内容
+          格式：$(content).appendTo(selector); 把content内容插入selector元素内，默认在尾部。
+
+        7）使用before和after在元素的前后插入内容，它们分别表示在整个元素的前面和后面插入指定的元素内容，
+          格式：$(selector).before(content);
+               $(selector).after(content); /*content可以是元素或者HTML字符串*/
+
+        8）使用clone方法复制元素
+          调用clone()方法可以生成一个被选元素的副本，即复制一个被选元素，包含它的节点、文本和属性
+          格式：$(selector).clone(); /*selector可以是一个元素或者HTML内容*/
+
+        9）替换内容
+          replaceWith()和replaceAll()方法都可以用于替换元素或者元素中的内容，但它们调用时，内容和被替换元素所在的位置不同。
+          格式：$(selector).relaceWith(content); //content 可以是文本，HTML标签文本
+               $(content).relaceAll(selector); //content 必须是HTML标签文本
+          例子：$("#text").replaceWith("text message...") yes
+               $("#text").replaceWith("<p>text message...</p>") yes
+               $("text message...").replaceWith("#text") no
+               $("<p>text message...</p>").replaceWith("#text") yes
+       
+       10)使用wrap()和wrapInner()方法包裹元素和内容
+          wrap（）和wrapInner()方法都可以进行元素的包裹
+          wrap（）->用于包裹元素本身，
+          wrapInner() ->用于包裹元素中的内容
+          格式：$(selector).wrap(wrapper)
+               $(selector).wrapInner(weapper) //参数selector为被包裹的元素，wrapper参数为包裹元素的格式
+          例子：$("#text").wrap("<div style='color:red'>Text:</div>")
+
+       11)使用each()方法遍历元素
+          使用each()方法可以遍历指定的元素集合，在遍历时，通过回调函数返回遍历元素的序列号，
+          格式：$(selector).each(function(index){...}) //function为遍历时的回调函数，index为遍历元素的序列号，从0开始。
+
+       12）使用remove()和empty()方法删除元素
+          remove（）方法删除所选元素的本身和子元素，可以通过添加过滤参数指定需要删除的某些元素，
+          empty()方法只删除所选元素的子元素
+
+   5、jQuery事件与应用
+      1）页面加载时出发的ready()事件
+        ready()事件类似于onLoad()事件，但前者只要页面的DOM结构加载后便触发，而后者必须在页面全部元素加载成功才出发，ready可以写多个，按顺序执行
+        格式：$(document).ready(function(){...}) 等价于 $(function(){...})
+      
+      2）使用bind()方法绑定元素的事件
+        为元素绑定事件
+        格式：$(selector).bind("event",function(){....}) //绑定一个方法
+             $(selector).bind({
+                              event1:function(){....}
+                              event2:function(){....}
+                              ...
+                              }); //绑定多个方法
+       
+       3）使用hover()方法切换事件
+         hover()方法的功能是但鼠标移到所选元素上是，执行方法中的第一个函数，鼠标移出时，执行方法中的第二个函数，
+         格式：$(selector).hover(function(){...}，function(){...});
+
+       4)使用unbind()方法移除元素绑定的事件
+         格式：$(selector).unbind(event,function(){...});
+         
+       5)使用one()方法绑定元素的一次性事件
+         one()方法可以绑定元素任何有效的事件，但这种方法绑定的事件只能触发一次
+         格式：$(selector).one(event,function(){...})
+
+       6)调用trigger()方法手动触发指定的事件名称
+         格式：$(selector).trigger("事件")
+         例如：手动触发文本框的"select"事件，是文本框的默认值处于全部被选中的状态。
+         $("input").trigger("select");
+       
+       7）文本框的focus和blur事件
+         focus事件在元素获取焦点时触发，
+         blur事件则是在元素失去焦点时触发
+
+       8）下拉列表的change事件
+         当一个元素的值发生变化时，将会触发change事件
+
+       9）调用live()方法绑定元素的事件
+         与bind()方法相同，live()方法可以绑定元素的可执行事件，除此之外，live()方法还可以绑定动态元素，即使用代码添加的元素事件
+         格式：$(selector).live(event,function(){...})
+         注意：jquery 1.10版本后使用on()方法代替此方法。
+
+    6、jquery 动画特效
+      1）隐藏和显示元素
+        show()和hide()方法用于显示或隐藏页面中的元素，
+        格式：$(select).hide(speed,[callback])
+             $(select).show(speed,[callback])
+             参数speed设置隐藏或显示时的速度值，可为"slow"、"fast"或毫秒数值，可选项参数callback为隐藏或显示动作执行完后调用的函数名
+      
+      2）滑动效果
+        slideUp() -> 向上滑动元素
+        slideDown() -> 向下滑动元素
+        格式：$(selector).slideUp(speed,[callback]) 适用于显示的元素
+             $(selector).slideDown(speed,[callback]) 适用于被隐藏的元素
+             speed为滑动时的速度，单位毫秒，也可以是"fast"、"slow"字符，可选参数callback为滑动成功后执行的回调函数名。
+        slideToggle()方法可以切换slideUp()和slideDown,如果元素已向上滑动，调用此方法，则元素自动向下滑动，反之，则元素自动向上滑动
+
+      3）淡入淡出效果
+        fadeIn() -> 淡入效果
+        fadeOut() -> 淡出效果
+        格式：$(selector).fadeIn(speed,[callback])
+             $(selector).fadeOut(speed,[callback])
+        speed为淡入淡出的速度，callback参数为执行完后执行的回调函数
+
+       4）淡入淡出的不透明效果
+        调用fadeTo方法，可以将所选元素的不透明度以淡入淡出的效果调整为指定的值，
+        格式：$(selector).fadeTo(speed,opacity,[callback])
+        speed->效果的速度
+        opacity -> 指定的不透明值，取值范围0.0~1.0
+        callback -> 为效果完成后，回调的函数名
+
+       5）自定义简单动画效果
+         调用animate()方法可以创建自定义动画效果
+         格式：$(selector).animate({params},speed,[callback])
+         params -> 制作动画效果的css属性名与值，
+         speed -> 动画的效果的速度,单位毫秒
+         callback -> 动画完成时执行的回调函数名
+ 
+       6）stop()方法停止当前所有动画
+         stop()方法的功能是在动画完成之前，停止当前正在执行的动画效果（滑动、淡入淡出和自定义的动画），
+         格式：$(selector).stop([clearQueue],[goToEnd])
+         clearQueue -> bool值，是否停止正在执行的动画
+         goToEnd -> bool值，是否完成正在执行的动画，否认false
+
+       7）delay()方法延时执行动画效果
+         delay()方法的功能是设置一个延时值来推迟动画效果的执行
+         格式：$(selector).delay(duration)
+         duration为延时值，单位毫秒，当超过延时值是，动画继续执行
+    
+   7、jquery实现Ajax应用
+       1)使用load()方法异步请求数据
+         使用load()方法通过Ajax请求加载服务器中的数据，并把返回的数据放置到指定的元素中，
+、        格式：$(selector).load(url，[data],[callback])
+          url -> 加载服务器地址
+          data -> 请求时发送的数据
+          callback -> 数据请求成功后，执行的回调函数
+          例子：$("#btnShow").bind("click",function(){
+                                   var $this=$(this);
+                                   $(".content")
+                                   .html("<img src='loading.gif' alt='loading'>")
+                                   .load("data/GetData.html",function(){
+                                     $this.attr("disabled","true");
+                                    });    
+                                   })
+      
+     2)使用getJSON（）方法异步加载JSON格式数据
+       使用getJSON()方法可以通过Ajax异步请求的方式，获取服务器中的数组，并对获取的数据进行解析，显示在页面中
+       格式：$.getJSON(url,[data],callback)
+       url -> 请求加载json格式文件的服务器地址
+       data -> 可选参数，请求时发送的数据
+       callback -> 数据请求完成后，执行的回调函数
+       例子：$("#btnShow").bind("click",function(){
+                            var $this=$(this);
+                            $.getJson("data/GetData.json",function(data){
+                            $this.attr("disabled","true");
+                            $.each(data,function(index,sport){
+                                   $("ul").append("<li>"+sport["name"]+</li>);
+                                  });    
+                            });    
+                          });
+        
+    3)使用getScript()方法异步加载并执行js文件
+      使用getScript()方法异步请求并执行服务器中的JavaScript格式的文件,
+      格式：$.getScript(url，callback)
+      url -> 服务器请求的地址
+      callback -> 数据请求完成后，执行的回调函数
+      例子：$("#btnShow").bind("click",function(){
+                            var $this=$(this);
+                            $.getScirpt("data/GetData.json",function(data){
+                            $this.attr("disabled","true");  
+                            });    
+                          });
+
+     4)使用get()方法从服务器获取数据
+       使用get()方法是，采用get方式向服务器请求数据，并通过方法中回调的参数返回请求的数据，
+       格式：$.get(url,[data],callback,type)
+       url -> 服务器请求地址
+       data -> 可选参数，请求时发出的数据
+       callback -> 数据请求完成后，执行的回调函数
+        例子：$("#btnShow").bind("click",function(){
+                            var $this=$(this);
+                            $.get("data/GetData.json",{id:"458"},function(data){
+                            $this.attr("disabled","true");
+                            $("ul").append("<li>+data.name+</li>");  
+                            },"json");    
+                          });
+
+      5)使用post()方法向服务器发送数据
+        与get()方法相比，post()方法用于以POST方式向服务器发送数据，服务器接收到数据后，进行处理，并将处理结果返回页面
+        格式：$.post(url,[data],[callback])
+        url -> 服务器请求地址
+        data -> 可选参数，向服务器请求时发送的数据，
+        callback -> 可选参数为请求成功后执行的回调函数
+        例子：$("#btnShow").bind("click",function(){
+                            var $this=$(this);
+                            $.get("data/SaveData.json",{Name:"Jack",Phone:"123456789"},function(data){
+                            $this.attr("disabled","true");
+                            if(data==="true"){
+                              alert("create successfully.") 
+                             }  
+                            });    
+                          });
+
+      6）使用ajax()方法加载服务器数据
+        使用ajax()方法是最低层、功能最强大的请求服务器数据的方法，它不仅可以获取服务器返回idea数据，还能向服务器发送请求并传递数值
+        格式：$.ajax([settings]);
+        参数settings为发送ajax请求时的配置对象，在该对象中，
+        url ->服务器请求的路径
+        data ->请求时传递的数据
+        dataType ->为服务器返回的数据类型
+        success -> 为请求成功的执行的回调函数
+        type -> 为发送数据请求的方式（get/post）,默认为get
+         例子：$("#btnShow").bind("click",function(){
+                            var $this=$(this);
+                            $.ajax({
+                              url:"data/getData.txt",
+                              dataType:"text",
+                              success:function(data){
+                                $this.attr("disabled","true");
+                                $("ul").append(data);
+                              }       
+                            });    
+                          });
+
+      7)使用serialize()方法序列化表单元素值
+        使用serialize()方法将表单中的name属性的元素值进行序列化，生成标准url编辑文本字符串，直接用于ajax请求
+        格式：$(selector).serialize();
+        selector参数是一个或多个表单中的 元素或表单元素本身。
+
+      8)使用ajaxSetup方法设置全局Ajax默认选项
+        使用ajaxSetup()方法可以设置Ajax请求的一些全局性选项值，设置完成后，后面的Ajax请求将不需要再添加这些选项值，
+        格式：$.ajaxSetup([options]);
+        可选项option参数是一个对象，通过该对象设置Ajax请求时的全局项值。
+        例子：$.ajaxSetup({
+                       dataType:"text",
+                       success:function(data){
+                         $("ul").empty().append(data);
+                       }
+                     });
+
+              $("#btnShow").bind("click",function(){
+                    url:"data/getData.txt"
+                   });
+
+       9)使用ajaxStart()和ajaxStop()方法
+         ajaxStart()和ajaxStop()方法是一个绑定Ajax事件的方法，当Ajax请求发出前触发ajaxStart()方法，请求完成后触发ajaxStop()方法。
+         格式：$（selector）.ajaxStart(function(){...})
+              $(selector).ajaxStop(function(){...})
+         例子：<ul>
+                 <li id="load">
+                   <img src="image/Loading.gif" alt="loading" >
+                 </li>
+              </ul>
+              $（"#load"）.ajaxStart(function(){$(this).show();})；
+              $("#load").ajaxStop(function(){$(this).hide();})；
+              $("#btnShow").bind("click",function(){
+                            var $this=$(this);
+                            $.ajax({
+                              url:"data/getData.txt",
+                              dataType:"text",
+                              success:function(data){
+                                $this.attr("disabled","true");
+                                $("ul").append(data);
+                              }       
+                            });    
+                          });
+ 
+    8、jquery常用的工具类函数
+       1)检测对象是否为空
+         $.isEmptyObject(obj);
+
+       2)检测连个节点的包含关系
+         调用$.contains,能检测在一个DOM节点中是否包含另外一个DOM节点，如果包含返回turn，否则返回false;
+         $.contains(container,contrined)
+         
+       3）删除字符串左右两边的空格符
+         $.trim(str);
+
+       4)URL操作函数
+         $.param(obj) //对obj进行序列化编码，使其成为可执行传值的URL地址
+
+       5）扩展工具函数（jquery插件）
+         使用$.extend(),可以对原有的工具函数进行扩展，自定义类别的Jquery插件,
+         格式：$.extend({options});
+         (function($){
+            $.extend({
+               "MaxNum":function(num1,num2){
+                 return (num1>num2)? num1 : num2; 
+                }
+             });
+         })(jQuery)
+
+         6)使用$.extend()合并多个object对象
+          使用$.extend(obj1,obj2,obj3,...objN);可以将对象进行合并，当存在相同属性名时，后者将覆盖前者
+          例子：var objInfo = { sex: "女" };
+               var objMess = { name: "土豪", title: "咱们交个朋友吧！"，};
+               var obj3 = { name: "高富帅", phone:123456 };
+                var objNewInfo=$.extend(objInfo,objMess,obj3);  -> {sex:"男"，name:"高富帅"，title:"咱们交个朋友吧！"，phone:123546}
