@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Xenon Boostrap Admin Panel" />
+	<meta name="author" content="" />
+	
+	<title>前端基础知识</title>
+
+	<link rel="stylesheet" href="assets/css/fonts/fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/bootstrap.css">
+	<link rel="stylesheet" href="assets/css/core.css">
+
+	<script src="assets/js/jquery-1.11.1.min.js"></script>
+	<style>
+		body{
+			font-size:16px;
+			font-weight:bold;
+		}
+		.panel .panel-body p{
+			margin-bottom:10px;
+		}
+	</style>
+</head>
+<body class="page-body">
+
+
+	<div class="page-container">
+
+		<div class="sidebar-menu fixed">	
+			<div class="sidebar-menu-inner">	
+				<header class="logo-env">	
+					<div class="logo">
+						<h1 style="color:#fff">前端基础知识</h1>
+					</div>					
+				</header>
+						
+				<ul id="main-menu" class="main-menu">
+					<li>
+						<a href="#">
+							<span class="title">HTML</span>
+						</a>
+						<ul>
+							<li>
+							    <a href="htmlindex.html#structure">
+									<span class="title">基本机构</span>
+								</a>
+							</li>
+							<li>
+								<a href="htmlindex.html#htmltags">
+									<span class="title">常用标签</span>
+								</a>
+							</li>
+							<li>
+								<a href="htmlindex.html#semantic">
+									<span class="title">HTML语义化</span>
+								</a>
+							</li>
+							<li>
+								<a href="htmlindex.html#codecomment">
+									<span class="title">代码注释</span>
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">
+							<span class="title">CSS</span>
+						</a>
+						<ul>
+							<li>
+								<a href="cssindex.html#grammar">
+									<span class="title">语法</span>
+								</a>
+							</li>
+							<li>
+								<a href="cssindex.html#show">
+									<span class="title">三种表现方式</span>
+								</a>
+							</li>
+							<li>
+								<a href="cssindex.html#selector">
+									<span class="title">选择器</span>
+								</a>
+							</li>
+							<li>
+								<a href="cssindex.html#priority">
+									<span class="title">权重优先级</span>
+								</a>
+							</li>
+							<li>
+								<a href="cssindex.html#elements">
+									<span class="title">三种元素</span>
+								</a>
+							</li>
+							<li>
+								<a href="cssindex.html#boxmodel">
+									<span class="title">盒子模型</span>
+								</a>
+							</li>
+							<li>
+								<a href="cssindex.html#float">
+									<span class="title">浮动</span>
+								</a>
+							</li>
+							<li>
+								<a href="cssindex.html#position">
+									<span class="title">定位</span>
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">
+							<span class="title">Jquery</span>
+						</a>
+						<ul>
+							<li>
+								<a href="#">
+									<span class="title">javascript基本知识</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="title">选择器</span>
+								</a>
+								<ul>
+									<li>
+										<a href="#">
+											<span class="title">基础选择器</span>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<span class="title">过虑选择器</span>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<span class="title">表单选择器</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">
+									<span class="title">操作DOM元素</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="title">事件与应用</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="title">动画特效</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="title">Ajax应用</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="title">常用工具类函数</span>
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>			
+			</div>
+			
+		</div>
+		
+		<div class="main-content">
+			<div class="page-title">
+				<div class="title-env">
+					<h1 class="title">HTML 基本知识</h1>
+				</div>	
+			</div>
+			
+			<div id="structure" class="panel">
+				<div class="panel-heading">
+					<h3 class="panel-title">基本结构</h3>
+				</div>
+						
+				<div class="panel-body">
+					<xmp>
+<!DOCTYPE html>  <!-- 声明浏览器的解析类型 -->
+<html lang="cn">
+<head>
+	<!-- 
+	  提供有关页面的元信息 
+	  http://www.cnblogs.com/chenqiang001/archive/2012/01/05/2312808.html
+	  -->
+	<meta http-equiv="content-type" content="text/html" charset="utf-8">
+	<!-- 引用外部样式 -->
+	<link type="text/css" rel="stylesheet" href="css/style.css" media="screen" />
+	<!-- 引用外部js脚本 -->
+	<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+	<!-- 页面内联样式 -->
+	<style type="text/css">
+		...
+	</style>
+</head>
+<body>
+	<h1>
+		网页内容
+	</h1>
+</body>
+<!-- 页面js脚本 -->
+<script type="text/javascript">
+	...
+</script>
+</html>
+					</xmp>
+				</div>
+			</div>
+			
+			<div id="htmltags" class="panel">
+				<div class="panel-heading">
+					<h3 class="panel-title">常用标签</h3>
+				</div>
+				<div class="panel-body">
+					<ul>
+						<li><xmp> <p> </xmp> 段落</li>
+						<li><xmp> <h*> </xmp> 标题</li>
+						<li><xmp> <em> </xmp> 强调， 斜体显示</li>
+						<li><xmp> <strong> </xmp>  强调的基本跟高，加粗显示 </li>
+						<li><xmp> <a> </xmp> 链接名称</li>
+						<li><xmp> <img> </xmp> <img src="图片地址" alt="图片说明" title="提示文字"/></li>
+						<li><xmp> <ul_> <li> </xmp> 列表</li>
+						<li><xmp> <table></table> </xmp></li>
+						<li><xmp> <div_> </xmp></li>
+						<li><xmp> <span> </xmp></li>
+						<li><xmp> <br> </xmp></li>
+						<li><xmp> <address> </xmp></li>
+						<li><xmp> <form> </xmp> 用于用户交互，可以把浏览者输入的数据专递到服务器端<br> 
+							<xmp><form method="" action="">...</form></xmp><br>
+							action:请求的地址<br>
+							method:请求方式(get/post)<br>
+						</li>
+						<li><xmp> <input type="submit" /> </xmp> 提交数据</li>
+						<li><xmp> <input type="reset" /> </xmp> 初始化form表单</li>
+						<li><xmp> <label> </xmp> <label for="控件ID"> label名称 </label> </li>
+					</ul>
+				</div>
+			</div>
+			
+			<div id="semantic" class="panel">
+				<div class="panel-heading">
+					<h3 class="panel-title">HTML语义化</h3>
+				</div>
+				<div class="panel-body">
+					<p>
+						根据内容的结构化（内容语义化），选择合适的标签（代码语义化）便于开发者阅读和写出更优雅的代码的同时让浏览器的爬虫和机器很好地解析。
+					</p>
+					<em>语义化好处</em>
+					<ul>
+						<li> 良好的内容结构、代码结构, 可读性强，便于开发、维护 </li>
+						<li> 有利于SEO </li>
+						<li> 便于其他设备的解析 </li>
+					<ul>
+				</div>
+			</div>
+			
+			<div id="codecomment" class="panel">
+				<div class="panel-heading">
+					<h3 class="panel-title">代码注释</h3>
+				</div>
+				<div class="panel-body">
+					<p>
+						<xmp> <!--注释文字--> </xmp>
+					</p>
+					<p>
+						<xmp> <!--模块名称 begin --> HTML 模块内容 <!-- 模块名称 end--> </xmp>
+					</p>
+				</div>
+			</div>
+			
+			<div class="panel panel-color panel-success hidden">
+				<div class="panel-heading">
+					<h3 class="panel-title">Green colored panel</h3>
+				</div>
+			    <p></p>
+			</div>
+			
+			
+			
+			<footer class="main-footer sticky footer-type-1">
+				<div class="footer-inner">
+					<div class="footer-text">
+						&copy; 2015 
+						<strong>Endy Yu</strong> 
+					</div>
+					
+					<div class="go-up">
+						<a href="#" rel="go-top">
+							<i class="fa-angle-up"></i>
+						</a>	
+					</div>	
+				</div>	
+			</footer>
+		</div>
+		
+	</div>
+
+	<!-- Bottom Scripts -->
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/TweenMax.min.js"></script>
+    <script src="assets/js/resizeable.js"></script>
+	<script src="assets/js/custom.js"></script>
+	<script src="assets/js/main.js"></script>
+    
+</body>
+</html>
