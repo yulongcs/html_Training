@@ -1,17 +1,32 @@
 body{margin:0px;}
-.box1,.box2,.box3{
-	width:100px; height:100px; 
-}
+/* .box1,.box2,.box3{
+	width: 100px;
+    height: 100px;
+    padding: 20px;
+} */
 .box1{
-	background:red;
+	width:500px;
+	height:500px;
+    background: red;
+	/* border: 5px solid #E6A43F; */
+	padding:1px;
 }
 .box2{
+	width:300px;
+	height:300px;
 	background:yellow;
-}.box3{
+	/* border: 5px solid #186645; */
+	margin:100px;
+}
+.box3{
+	width:100px;
+	height:100px;
 	background:blue;
+	border: 5px solid #3DA3EF;
+	margin:100px;
 }
 
-.box1:active{
+/* .box1:active{
 	background:#000;
 }
 
@@ -26,43 +41,28 @@ body{margin:0px;}
 }
 .box1:hover{
 	background:green;
-}
+} */
 
 
 
 /* 
 content-box，border和padding不计算入width之内
 padding-box，padding计算入width内
-border-box，border和padding计算入width之内，其实就是怪异模式了~  
+border-box，border和padding计算入width之内~  
 */
 
 
-/* .content-box{
-        box-sizing:content-box;
-        -moz-box-sizing:content-box;
-        width: 100px;
-        height: 100px;
-        padding: 20px;
-        border: 5px solid #E6A43F;
-        background: blue;
-    }
-    .padding-box{
-        box-sizing:padding-box;
-        -moz-box-sizing:padding-box;
-        width: 100px;
-        height: 100px;
-        padding: 20px;
-        border: 5px solid #186645;
-        background: red;                
-    }
-    .border-box{
-        box-sizing:border-box;
-        -moz-box-sizing:border-box;
-        width: 100px;
-        height: 100px;
-        padding: 20px;
-        border: 5px solid #3DA3EF;
-        background: yellow;
-    } */
+.content-box{
+	box-sizing:content-box;
+    -moz-box-sizing:content-box;   
+}
+.padding-box{
+    box-sizing:padding-box;
+    -moz-box-sizing:padding-box;             
+}
+.border-box{
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+}
 
 	

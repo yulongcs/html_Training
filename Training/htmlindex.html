@@ -15,13 +15,29 @@
 	<link rel="stylesheet" href="assets/css/core.css">
 
 	<script src="assets/js/jquery-1.11.1.min.js"></script>
-	<style>
+	<style type="text/css">
 		body{
 			font-size:16px;
 			font-weight:bold;
+			
 		}
 		.panel .panel-body p{
 			margin-bottom:10px;
+		}
+		.panel .panel-body
+		{
+			color:#000;
+		}
+		.sidebar-menu{
+			width:200px;
+		}
+		.sidebar-menu .logo-env
+		{
+			padding:30px 15px;
+		}
+		.sidebar-menu .main-menu ul li a
+		{
+			padding-left:15px;
 		}
 	</style>
 </head>
@@ -30,11 +46,11 @@
 
 	<div class="page-container">
 
-		<div class="sidebar-menu fixed">	
+		<div class="sidebar-menu">	
 			<div class="sidebar-menu-inner">	
 				<header class="logo-env">	
 					<div class="logo">
-						<h1 style="color:#fff">前端基础知识</h1>
+						<h3 style="color:#fff">前端基础知识</h3>
 					</div>					
 				</header>
 						
@@ -99,6 +115,11 @@
 							<li>
 								<a href="cssindex.html#boxmodel">
 									<span class="title">盒子模型</span>
+								</a>
+							</li>
+							<li>
+								<a href="cssindex.html#cssHack">
+									<span class="title">CSS Hack</span>
 								</a>
 							</li>
 							<li>
@@ -234,9 +255,9 @@
 						<li><xmp> <strong> </xmp>  强调的基本跟高，加粗显示 </li>
 						<li><xmp> <a> </xmp> 链接名称</li>
 						<li><xmp> <img> </xmp> <img src="图片地址" alt="图片说明" title="提示文字"/></li>
-						<li><xmp> <ul_> <li> </xmp> 列表</li>
+						<li><xmp> <ul> <li> </xmp> 列表</li>
 						<li><xmp> <table></table> </xmp></li>
-						<li><xmp> <div_> </xmp></li>
+						<li><xmp> <div> </xmp></li>
 						<li><xmp> <span> </xmp></li>
 						<li><xmp> <br> </xmp></li>
 						<li><xmp> <address> </xmp></li>

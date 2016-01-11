@@ -15,13 +15,29 @@
 	<link rel="stylesheet" href="assets/css/core.css">
 
 	<script src="assets/js/jquery-1.11.1.min.js"></script>
-	<style>
+	<style type="text/css">
 		body{
 			font-size:16px;
 			font-weight:bold;
+			
 		}
 		.panel .panel-body p{
 			margin-bottom:10px;
+		}
+		.panel .panel-body
+		{
+			color:#000;
+		}
+		.sidebar-menu{
+			width:200px;
+		}
+		.sidebar-menu .logo-env
+		{
+			padding:30px 15px;
+		}
+		.sidebar-menu .main-menu ul li a
+		{
+			padding-left:15px;
 		}
 	</style>
 </head>
@@ -99,6 +115,11 @@
 							<li>
 								<a href="cssindex.html#boxmodel">
 									<span class="title">盒子模型</span>
+								</a>
+							</li>
+							<li>
+								<a href="cssindex.html#cssHack">
+									<span class="title">CSS Hack</span>
 								</a>
 							</li>
 							<li>
@@ -322,10 +343,80 @@
 					<h3 class="panel-title">盒子模型</h3>
 				</div>
 				<div class="panel-body">
-					<p>
-						
+					<p style="text-align:center">
+						<img src="assets/images/boxmodel.png"></img>
 					</p>
-					
+					<h3>box-sizing 设置盒子模型组成模式</h3>
+					<ul>
+						<li>
+							<h4>content-box ( Element width = width + border + padding ) </h4>
+							<p>.test1{ box-sizing:content-box; width:200px; padding:10px; border:15px solid #eee; }</p>
+							<img src="assets/images/boxsizing-content.png"></img>
+						</li>
+						<li>
+							<h4>border-box ( Element width = width ) </h4>
+							<p>.test2{ box-sizing:border-box; width:200px; padding:10px; border:15px solid #eee; } </p>
+							<img src="assets/images/boxsizing-border.png"></img>
+						</li>
+						<li>
+							<h4>padding-box ( Element width = width + padding ) 只支持firebox </h4>
+						</li>
+					</ul>
+					<h3>兼容性</h3>
+					<p style="text-align:center">
+						<img src="assets/images/boxmodel-compatibility.png"></img>
+					</p>
+				</div>
+			</div>
+			
+			<div id="cssHack" class="panel">
+				<div class="panel-heading">
+					<h3 class="panel-title">CSS Hack</h3>
+				</div>
+				<div class="panel-body">
+					<P>
+						CSS hack是通过在CSS样式中加入一些特殊的符号,让不同的浏览器识别不同的符号,以达到应用不同的CSS样式,	其目的主要是解决浏览器兼容性
+					</P>
+					<ol>
+						<li>
+							特殊字符组要是正对IE早期浏览器
+						</li>
+						<li>
+							\9    ：所有IE浏览器都支持
+						</li>
+						<li>
+							_和-  ：仅IE6支持
+						</li>
+						<li>
+							*  ：仅IE6支持
+						</li>
+						<li>
+							\0    ：IE8、IE9支持，opera部分支持
+						</li>
+						<li>
+							\9\0  ：IE8部分支持、IE9支持
+						<li>
+						<li>
+							\0\9  ：IE8、IE9支持
+						</li>
+					</ol>
+					<h3>兼容各大主流浏览器</h3>
+					<xmp>
+	.element{
+		color:#000;             /*w3c标准*/
+		[;color:#f00;];         /*Webkit(chrome和safari)*/
+		color:#666\9;           /*IE8*/
+		*color:#999;            /*IE7*/
+		_color:#333;            /*IE6*/
+	}
+	:root .element{color:#0f0\9;}  /*IE9*/
+	@media all and (-webkit-min-device-pixel-ratio:10000), not all and (-webkit-min-device-pixel-ratio:0) {
+		.element{color:#336699;}
+	}  /*opera*/
+	@-moz-document url-prefix(){ 
+		.element{color:#f1f1f1;}
+	} /*Firefox*/
+					</xmp>
 				</div>
 			</div>
 			
