@@ -351,12 +351,12 @@
 						<li>
 							<h4>content-box ( Element width = width + border + padding ) </h4>
 							<p>.test1{ box-sizing:content-box; width:200px; padding:10px; border:15px solid #eee; }</p>
-							<img src="assets/images/boxsizing-content.png"></img>
+						    <img src="assets/images/boxsizing-content.png"/>
 						</li>
 						<li>
 							<h4>border-box ( Element width = width ) </h4>
 							<p>.test2{ box-sizing:border-box; width:200px; padding:10px; border:15px solid #eee; } </p>
-							<img src="assets/images/boxsizing-border.png"></img>
+						    <img src="assets/images/boxsizing-border.png"/>
 						</li>
 						<li>
 							<h4>padding-box ( Element width = width + padding ) 只支持firebox </h4>
@@ -364,7 +364,7 @@
 					</ul>
 					<h3>兼容性</h3>
 					<p style="text-align:center">
-						<img src="assets/images/boxmodel-compatibility.png"></img>
+					    <img src="assets/images/boxmodel-compatibility.png"/>
 					</p>
 				</div>
 			</div>
@@ -424,12 +424,71 @@
 				<div class="panel-heading">
 					<h3 class="panel-title">浮动</h3>
 				</div>
-				<div class="panel-body">
-					<p>
-						
-					</p>
-					
-				</div>
+			    <div class="panel-body">
+			        <p>
+			            <ul>
+			                <li>
+			                    <h4>浮动的由来 -- 实现文字环绕效果</h4>
+			                </li>
+			                <li>
+			                    <h4>浮动具有包裹性，破环性和偏移性</h4>
+			                </li>
+			                <li>
+			                    <h4>清楚浮动 -- 清楚浮动带来的影响</h4>
+			                    <ol>
+			                        <li>
+			                            <h4>clear:both/left/right</h4>
+			                            <ol>
+			                                <li>
+			                                    在塌陷的父容器底部添加具有clear:both声明的块状元素
+			                                    <em>不足：增添许多div标签</em>
+			                                </li>
+			                                <li>
+			                                    CSS 使用after在父元素底部生成一个具有clear:both的伪元素
+			                                    <em>不足：IE6/IE7 不支持</em>
+			                                </li>
+			                            </ol>
+			                        </li>
+			                        <li>
+			                            <h4>BFC/haslayout </h4>
+			                            <em>Block fomatting context, 块级格式化上下文</em>
+			                            <ol>
+			                                <li>
+			                                    <h4>触发BFC</h4>
+			                                    <ol>
+			                                        <li>float:left/right</li>
+			                                        <li>绝对定位,position:absolute,fixed</li>
+			                                        <li>display:inline-block/table-cell/table-captions(IE8+)</li>
+			                                        <li>overflow:hidden/scroll(IE7+)</li>
+			                                    </ol>
+			                                    <em>不足：无法使用一个声明，应用于各种场景</em>
+			                                </li>
+			                                <li>
+			                                    <h4>haslayout</h4>
+			                                    <div>使用zoom:1触发haslayout</div>
+			                                    <em>不足：支持IE6/7,大多现代浏览器不支持</em>
+			                                </li>
+			                            </ol>
+			                            <a href="http://www.bubuko.com/infodetail-203738.html" target="_blank">hasLayout和BFC的理解</a>
+			                        </li>
+			                        <li>
+			                            <h4>权衡后的策略</h4>
+			                            <div>
+			                                .clearfix:after{ content:""; clear:both; display:block; height:0; overflow:hidden}<br/>
+			                                /*.clearfix:after{ content:""; clear:both; display:table;}*/<br/>
+			                                .clearfix{ *zoom:1;}
+			                            </div>
+			                        </li>
+			                        <li>
+			                            <h4>切勿乱用</h4>
+			                            <em>应用在包含浮动子元素的<strong style="color:red">父元素</strong>上</em>
+			                        </li>
+			                    </ol>
+			                </li>
+			            </ul>
+			        </p>
+
+			    </div>
 			</div>
 			
 			<div id="position" class="panel">
