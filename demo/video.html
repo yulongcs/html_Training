@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-cn"> 
+<head> 
+<meta http-equiv="content-type" content="text/html" charset="utf-8">
+<title>水平垂直居中div演示效果</title> 
+<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+<style type="text/css"> 
+html{
+	overflow: auto;
+}
+.poupup{ 
+	position:fixed;left:50%;top:50%; z-index:10001;
+} 
+.mask{
+	position:fixed; top:0; right:0; bottom:0; left:0; background:#000; opacity:0.8; z-index:1000;
+}
+.poupup_close{
+	position:absolute;
+	width:28px;
+	height:28px;
+	cursor:pointer;
+	background:url(http://www3.res.meizu.com/static/cn/components/mz-player/images/close_0dc7930.png) no-repeat;
+	left:100%;
+	margin-top: -30px;
+	margin-left: -30px;
+}
+.poupup_main{
+
+}
+</style> 
+</head> 
+<body>
+	
+	<div class="poupup">
+		<a class="poupup_close"></a>
+		<div class="poupup_main">
+			<embed src="http://player.youku.com/player.php/Type/Folder/Fid/20107627/Ob/1/sid/XMTQ1MDA1NTU2MA==/v.swf" quality="high" align="middle" allowScriptAccess="always" allowFullScreen="true" mode="transparent" type="application/x-shockwave-flash"></embed>
+		</div> 
+	</div>
+	<div class="mask"></div>
+	
+	<script>
+	$(function(){
+		$(window).resize(function() {
+			//SetPosition();
+			SetSize();
+		});
+		
+		var SetSize = function(){
+			var win_w = $(window).width();
+			var win_h = $(window).height();
+			if(win_w > 1200){
+				$(".poupup").width(900);
+				$(".poupup").height(900*9/16);
+				$(".poupup embed").width(900);
+				$(".poupup embed").height(900*9/16);
+				var ma_t = -1 * 900*9/16 / 2 + "px";
+				var ma_l = -1 * 900 / 2 + "px";
+				$(".poupup").css({"margin-left": ma_l, "margin-top": ma_t});
+			}
+			else if(win_w > 400){
+				$(".poupup").width(400);
+				$(".poupup").height(400*9/16);
+				$(".poupup embed").width(400);
+				$(".poupup embed").height(400*9/16);
+				var ma_t = -1 * 400*9/16 / 2 + "px";
+				var ma_l = -1 * 400 / 2 + "px";
+				$(".poupup").css({"margin-left": ma_l, "margin-top": ma_t});
+			}
+			//SetPosition();
+		}
+		
+		var SetPosition= function(){
+			var w = $(".poupup").width();
+			var h = $(".poupup").height();
+			var ma_l = -1 * h / 2 + "px";
+			var ma_t = -1 * w / 2 + "px";
+			$(".poupup").css({"margin-left": ma_l, "margin-top": ma_t});
+		};
+		
+		SetSize();
+		
+	})
+	</script>
+</body> 
+</html> 
